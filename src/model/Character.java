@@ -1,6 +1,6 @@
 package model;
 
-public class Character {
+public abstract class Character {
 	
 	public String getName() {
 		return name;
@@ -143,5 +143,6 @@ public class Character {
 	public void CharUseItem() {
 		
 	}
-	 
+	
+	public abstract void attack();
 }

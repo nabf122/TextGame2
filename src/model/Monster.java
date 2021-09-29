@@ -88,4 +88,9 @@ public class Monster {
 				+"\nAttack Damage :"+mon_attack_damage+"\nDefense :"+mon_defense+"\nGold :"+mon_own_gold+"\n\n");
 	}
 	
+	public void MonAttack(String a) {
+		System.out.println(getMon_name()+" Attack!");
+		
+	}
+	
 }

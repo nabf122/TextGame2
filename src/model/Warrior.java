@@ -1,18 +1,9 @@
 package model;
 
 public class Warrior extends Character {
-	
-	private String skill;
-
-	public String getSkill() {
-		return skill;
-	}
-
-	public void setSkill(String skill) {
-		this.skill = skill;
-	}
-	
-	// 공격
+		
+			
+	// 공격하기
 	public void attack() {
 		System.out.println("Power Strike!");
 	}

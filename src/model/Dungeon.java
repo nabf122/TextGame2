@@ -25,12 +25,10 @@ public class Dungeon {
 		
 		if(str1.charAt(0) == '1') {
 			System.out.println("You have entered 'Slime Plains'.");
-			dungeonName ="sp";
-			
+						
 		} else if(str1.charAt(0) == '2') {
 			System.out.println("You have entered 'Golem Shunji'.");
-			dungeonName ="gs";
-			
+						
 		} else if(str1.charAt(0) == '3') {
 			System.out.println("You have entered 'Dragon Valley'.");
 			dungeonName ="dv";
