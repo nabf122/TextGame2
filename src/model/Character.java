@@ -1,6 +1,6 @@
 package model;
 
-public abstract class Character {
+public class Character {
 	
 	public String getName() {
 		return name;
@@ -92,57 +92,5 @@ public abstract class Character {
 	private int defense;
 	private int critical_chance;
 	private int own_gold;
-		
-	// Warrior 캐릭터 생성
-	public void buildWarrior() {
-		setJob("Warrior");
-		setLevel(1);
-		setXp(0);
-		setMax_hp(40);
-		setCur_hp(40);
-		setAttack_damage(6);
-		setDefense(3);
-		setCritical_chance(5);
-		setOwn_gold(0);
-	}
-	
-	// Archer 캐릭터 생성
-	public void buildArcher() {
-		setJob("Archer");
-		setLevel(1);
-		setXp(0);
-		setMax_hp(30);
-		setCur_hp(30);
-		setAttack_damage(10);
-		setDefense(1);
-		setCritical_chance(10);
-		setOwn_gold(0);
-	}
-	
-	// Magician 캐릭터 생성
-	public void buildMagician() {
-		setJob("Magician");
-		setLevel(1);
-		setXp(0);
-		setMax_hp(40);
-		setCur_hp(40);
-		setAttack_damage(8);
-		setDefense(1);
-		setCritical_chance(5);
-		setOwn_gold(0);
-	}
-		
-	// 캐릭터 상태 확인
-	public void CharStatus() {
-		System.out.println("\nYour Character Status!\n");
-		System.out.println("Name :"+name+"\nClass :"+job+"\n\nlevel :"+level+"\nxp :"+xp+"\nMaxHP :"+max_hp+"\nCurHP :"+cur_hp
-				+"\nAttack Damage :"+attack_damage+"\nDefense :"+defense+"\nCritical Chance :"+critical_chance+"%\nGold :"+own_gold+"\n\n");
-	}
-	
-	// 캐릭터 아이템 사용
-	public void CharUseItem() {
-		
-	}
-	
-	public abstract void attack();
+
 }

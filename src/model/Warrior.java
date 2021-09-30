@@ -1,11 +1,13 @@
 package model;
 
-public class Warrior extends Character {
+public class Warrior extends Adventurer {
 		
-			
+	/*		
 	// 공격하기
-	public void attack() {
+	public int attack() {
 		System.out.println("Power Strike!");
+		int a = 0;
+		return a;
 	}
 	
 	// 맞다
@@ -17,4 +19,5 @@ public class Warrior extends Character {
 	public void die() {
 		System.out.println("You die!");
 	}
+	*/
 }

@@ -1,6 +1,8 @@
 package model;
 
-public class Monster {
+import java.util.Random;
+
+public class Monster extends Character {
 
 	public String getMon_name() {
 		return mon_name;
@@ -80,17 +82,78 @@ public class Monster {
 		setMon_own_gold(20);
 		setMon_xp(3);
 	}
+	
+	// 킹 슬라임 생성
+	public void buildKingSlime() {
+		setMon_name("KingSlime");
+		setMon_Rank("Boss Monster");
+		setMon_level(5);
+		setMon_max_hp(50);
+		setMon_cur_hp(50);
+		setMon_attack_damage(10);
+		setMon_defense(3);
+		setMon_own_gold(200);
+		setMon_xp(10);
+	}
 		
 	// 몬스터의 상태 확인
-	public void MonStatus() {
+	public void monsterStatus() {
 		System.out.println("\nMonster Status!\n");
 		System.out.println("Name :"+mon_name+"\nRank :"+mon_Rank+"\n\nlevel :"+mon_level+"\nMaxHP :"+mon_max_hp+"\nCurHP :"+mon_cur_hp
 				+"\nAttack Damage :"+mon_attack_damage+"\nDefense :"+mon_defense+"\nGold :"+mon_own_gold+"\n\n");
 	}
 	
-	public void MonAttack(String a) {
-		System.out.println(getMon_name()+" Attack!");
+	// 공격하다
+	public int attack() {
 		
+		Random random = new Random();
+		
+		int result = 0;
+		int critical = 0;
+		
+		critical = (int) (Math.random() * 100 + 1);
+		if(1 <= critical && critical <= 5) {
+			result = (random.nextInt(mon_attack_damage) - 1) * 2;
+			System.out.println("Monster's Critical Attack!");
+		}else {
+			result = random.nextInt(mon_attack_damage) - 1;
+		}
+		
+		return result;
 	}
 	
+	// 공격받다
+	public void attacked(int num) {
+		int result = 0;
+		if(mon_defense >= num) {
+			mon_cur_hp = mon_cur_hp - result;
+			System.out.println("did no damage!");
+		} else {
+			result = num - mon_defense;
+			mon_cur_hp = mon_cur_hp - result;
+			System.out.println("Deal "+result+" damage.");
+		}
+	}
+	
+	//남은 체력을 체크하다
+	public boolean chkhp() {
+		boolean chk;
+		
+		if(mon_cur_hp <= 0) {
+			chk = false;
+		}else
+			chk = true;
+		
+		return chk;
+	}
+	
+	//돈을 넘겨주다
+	public int giveGold() {
+		return mon_own_gold;
+	}
+	
+	//경험치를 넘겨주다
+	public int giveXp() {
+		return mon_xp;
+	}
 }
