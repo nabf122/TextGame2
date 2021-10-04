@@ -9,6 +9,8 @@ public class Main {
 		Adventurer adv = new Adventurer();
 		Monster monster = new Monster();
 		
+		// Item item = new WeaponItem();
+		
 		Scanner answer = new Scanner(System.in);
 		
 		String chkUser, chkClass, chkText;
@@ -115,8 +117,42 @@ public class Main {
 				// 인벤토리 - 장비, 소비, 제작 아이템 확인 가능하도록 추가
 				
 			}else if(chkText.charAt(0) == 's') {
-				// 상점 - 
+				// 상점
+				String item_name;
+				int item_num;
 				
+				System.out.println("visited Store.\nWhat are you going to do?\n");
+				System.out.println("(1) buying. press '1'\n"
+						+ "(2) Selling. press '2'\n"
+						+ "(3) exit. press '3'\n");
+				chkText = answer.nextLine();
+				if(chkText.charAt(0) == '1') {
+					System.out.println("What would you like to buy?\n");
+					System.out.println("(1) 하급 포션(회복+10). 가격: 20 gold. press '1'\n"
+							+ "(2) 중급 포션(회복+15). 가격: 35 gold. press '2'\n"
+							+ "(3) 상급 포션(회복+30). 가격: 55 gold. press '3'\n");
+					chkText = answer.nextLine();
+					if(chkText.charAt(0) == '1') {
+						System.out.println("구매할 갯수를 입력해주세요. 최대 소지량: 100 개\n");
+						item_num = answer.nextInt();
+						if(item_num <= 100 || item_num > 0) {
+							item_name = "lowPotion";
+							
+						}else
+							System.out.println("정상적인 값을 입력해주세요.");
+						
+						
+					} else if(chkText.charAt(0)  == '2') {
+						
+					} else if(chkText.charAt(0)  == '3') {
+						
+					} else {
+						return;
+					}
+				} else if(chkText.charAt(0)  == '2') {
+					
+				}else 
+					return;
 			}else if(chkText.charAt(0) == 'm') {
 				// 장비 제작
 				
