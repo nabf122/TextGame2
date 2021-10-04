@@ -42,7 +42,7 @@ public class Adventurer extends Character {
 			setCritical_chance(5);
 			setOwn_gold(0);
 		}
-			
+		
 		// 캐릭터 상태 확인
 		public void CharStatus() {
 			System.out.println("\nYour Character Status!\n");
@@ -50,6 +50,7 @@ public class Adventurer extends Character {
 					+"\nAttack Damage :"+getAttack_damage()+"\nDefense :"+getDefense()+"\nCritical Chance :"+getCritical_chance()+"%\nGold :"+getOwn_gold()+"\n\n");
 		}
 		
+		// heal 스킬 사용 시 체력 체크
 		public int heal(int max, int cur, String str) {
 			
 			if(str.charAt(0) == 'w') {
@@ -134,16 +135,58 @@ public class Adventurer extends Character {
 			return chk;
 		}
 		
-		//돈을 넘겨받다
+		// 돈을 넘겨받다
 		public void receiveGold(int gold) {
 			setOwn_gold(getOwn_gold()+gold);
 			System.out.println("You got "+gold+" gold.");
 		}
 		
-		//경험치를 넘겨받다
+		// 경험치를 넘겨받다
 		public void receiveXp(int xp) {
 			setXp(getXp()+ xp);
 			System.out.println("You got "+xp+" xp.");
+		}
+		
+		// 레벨업 체크
+		public void levelupChk(){
+			if(getLevel() == 1 && getXp() >= 10) {
+				setXp(getXp()- 10);
+				setLevel(2);
+			} else if(getLevel() == 2 && getXp() >= 20)	{
+				setXp(getXp()- 20);
+				setLevel(3);
+			} else if(getLevel() == 3 && getXp() >= 30)	{
+				setXp(getXp()- 30);
+				setLevel(4);
+			} else if(getLevel() == 4 && getXp() >= 40)	{
+				setXp(getXp()- 40);
+				setLevel(5);
+			} else if(getLevel() == 5 && getXp() >= 50)	{
+				setXp(getXp()- 50);
+				setLevel(6);
+			} else if(getLevel() == 6 && getXp() >= 70)	{
+				setXp(getXp()- 70);
+				setLevel(7);
+			} else if(getLevel() == 7 && getXp() >= 90)	{
+				setXp(getXp()- 90);
+				setLevel(8);
+			} else if(getLevel() == 8 && getXp() >= 110)	{
+				setXp(getXp()- 110);
+				setLevel(9);
+			} else if(getLevel() == 9 && getXp() >= 130)	{
+				setXp(getXp()- 130);
+				setLevel(10);
+			} else if(getLevel() == 10 && getXp() >= 150)	{
+				setXp(getXp()- 150);
+				setLevel(11);
+			} else {
+				System.out.println("lack of xp.\n");
+				return;
+			}
+			
+			System.out.println("Level UP!!\n");
+			System.out.println("Your level is "+getLevel());
+			System.out.println("Stat has risen!");
 		}
 		
 }

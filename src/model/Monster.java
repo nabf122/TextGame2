@@ -70,7 +70,7 @@ public class Monster extends Character {
 	private int mon_own_gold;
 	private int mon_xp;
 	
-	// 弊赴 浇扼烙 积己
+	// GreenSlime 积己
 	public void buildGreenSlime() {
 		setMon_name("GreenSlime");
 		setMon_Rank("Normal Monster");
@@ -83,7 +83,46 @@ public class Monster extends Character {
 		setMon_xp(3);
 	}
 	
-	// 欧 浇扼烙 积己
+	// StoneGolem 积己
+	public void buildStoneGolem() {
+		setMon_name("StoneGolem");
+		setMon_Rank("Normal Monster");
+		setMon_level(5);
+		setMon_max_hp(50);
+		setMon_cur_hp(50);
+		setMon_attack_damage(15);
+		setMon_defense(5);
+		setMon_own_gold(120);
+		setMon_xp(10);
+	}
+	
+	// RedDragon 积己
+	public void buildRedDragon() {
+		setMon_name("RedDragon");
+		setMon_Rank("Normal Monster");
+		setMon_level(8);
+		setMon_max_hp(100);
+		setMon_cur_hp(100);
+		setMon_attack_damage(25);
+		setMon_defense(5);
+		setMon_own_gold(200);
+		setMon_xp(20);
+	}
+
+	// BlueDragon 积己
+	public void buildBlueDragon() {
+		setMon_name("BlueDragon");
+		setMon_Rank("Normal Monster");
+		setMon_level(8);
+		setMon_max_hp(100);
+		setMon_cur_hp(100);
+		setMon_attack_damage(20);
+		setMon_defense(10);
+		setMon_own_gold(200);
+		setMon_xp(20);
+	}
+	
+	// Boss KingSlime 积己
 	public void buildKingSlime() {
 		setMon_name("KingSlime");
 		setMon_Rank("Boss Monster");
@@ -94,6 +133,32 @@ public class Monster extends Character {
 		setMon_defense(3);
 		setMon_own_gold(200);
 		setMon_xp(10);
+	}
+	
+	// Boss QuagGolem 积己
+	public void buildQuagGolem() {
+		setMon_name("QuagGolem");
+		setMon_Rank("Boss Monster");
+		setMon_level(8);
+		setMon_max_hp(100);
+		setMon_cur_hp(100);
+		setMon_attack_damage(20);
+		setMon_defense(7);
+		setMon_own_gold(500);
+		setMon_xp(30);
+	}
+	
+	// Boss Dracaris 积己
+	public void buildDracaris() {
+		setMon_name("Dracaris");
+		setMon_Rank("Boss Monster");
+		setMon_level(10);
+		setMon_max_hp(200);
+		setMon_cur_hp(200);
+		setMon_attack_damage(30);
+		setMon_defense(10);
+		setMon_own_gold(1000);
+		setMon_xp(200);
 	}
 		
 	// 阁胶磐狼 惑怕 犬牢

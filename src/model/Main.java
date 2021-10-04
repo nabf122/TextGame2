@@ -91,7 +91,6 @@ public class Main {
 		// 캐릭터 생성 종료. 게임 시작!
 		while(true) {
 			
-			// break;
 			/*
 			 * 1. 캐릭터 상태
 			 * 2. 인벤토리
@@ -129,51 +128,98 @@ public class Main {
 						+"(3)용들의 계곡(난이도 :4). press '3'\n");
 				chkText = answer.nextLine();
 				
-				if(chkText.charAt(0) == '1') {
-					int phase = 1;
-					// 슬라임 평원 입장, Phase One 시작
-					System.out.println("슬라임 평원에 도착하였습니다.\n");
+				int phase = 1;
+				String n = chkText;
 					
-					while(phase != 5) {
+				while(phase != 5) {
 						
-						if(phase == 1) {
+					if(phase == 1) {					
+						if(n.charAt(0) == '1') {
+							// 슬라임 평원 입장, Phase One 시작
+							System.out.println("슬라임 평원에 도착하였습니다.\n");
 							System.out.println("Start Phase 1.\n");
-							// Phase One Monster build
+							// Phase 1 GreenSlime Monster build
 							monster = new GreenSlime();
 							monster.buildGreenSlime();
-						}else if(phase == 2) {
-							System.out.println("Start Phase 2.\n");
-							// Phase One Monster build
+						} else if(n.charAt(0) == '2') {
+							// 골렘의 사원 입장, Phase One 시작
+							System.out.println("골렘의 사원에 도착하였습니다.\n");
+							System.out.println("Start Phase 1.\n");
+							// Phase 1 StoneGolem Monster build
+							monster = new StoneGolem();
+							monster.buildStoneGolem();
+						} else {
+							// 용들의 협곡 입장, Phase One 시작
+							System.out.println("용들의 협곡에 도착하였습니다.\n");
+							System.out.println("Start Phase 1.\n");
+							// Phase 1 BlueDragon Monster build
+							monster = new BlueDragon();
+							monster.buildBlueDragon();
+						}
+					}else if(phase == 2) {
+						System.out.println("Start Phase 2.\n");
+						if(n.charAt(0) == '1') {
+							// Phase 2 GreenSlime Monster build
 							monster = new GreenSlime();
 							monster.buildGreenSlime();
-						}else if(phase == 3) {
-							System.out.println("Start Phase 3.\n");
-							// Phase One Monster build
+						} else if(n.charAt(0) == '2') {
+							// Phase 2 StoneGolem Monster build
+							monster = new StoneGolem();
+							monster.buildStoneGolem();
+						} else {
+							// Phase 2 RedDragon Monster build
+							monster = new RedDragon();
+							monster.buildRedDragon();
+						}
+					}else if(phase == 3) {
+						System.out.println("Start Phase 3.\n");
+						if(n.charAt(0) == '1') {
+							// Phase 3 GreenSlime Monster build
 							monster = new GreenSlime();
 							monster.buildGreenSlime();
-						}else if(phase == 4) {
-							System.out.println("Start Phase Boss.\n");
-							// Phase One Monster build
+						} else if(n.charAt(0) == '2') {
+							// Phase 3 StoneGolem Monster build
+							monster = new StoneGolem();
+							monster.buildStoneGolem();
+						} else {
+							// Phase 3 RedDragon Monster build
+							monster = new RedDragon();
+							monster.buildRedDragon();
+						}
+					}else if(phase == 4) {
+						System.out.println("Start Phase Boss.\n");
+						if(n.charAt(0) == '1') {
+							// Phase 4 KingSlime Boss Monster build
 							monster = new KingSlime();
 							monster.buildKingSlime();
+						} else if(n.charAt(0) == '2') {
+							// Phase 4 StoneGolem Boss Monster build
+							monster = new QuagGolem();
+							monster.buildQuagGolem();
+						} else {
+							// Phase 4 Dracaris Boss Monster build
+							monster = new Dracaris();
+							monster.buildDracaris();
 						}
+					}
 					
-						// Battle Phase Start
-						while(true) {
-							System.out.println("Choose your action.");
-							System.out.println("(1)Attack. press '1'\n"
-									+"(2)Heal. press '2'\n"
-									+"(3)Check Status. press '3'\n"
-									+"(4)Run away. press '4'\n");
-							chkText = answer.nextLine();
-						
-							if(chkText.charAt(0) == '1') { // attack
+					// Battle Phase Start
+					while(true) {
+						System.out.println("Choose your action.");
+						System.out.println("(1)Attack. press '1'\n"
+								+"(2)Heal. press '2'\n"
+								+"(3)Check Status. press '3'\n"
+								+"(4)Run away. press '4'\n");
+						chkText = answer.nextLine();
+					
+						if(chkText.charAt(0) == '1') { // attack
 								monster.attacked(adv.attack());
 								if(monster.chkhp() == false) {
 									if(monster.getMon_Rank().equals("Normal Monster")) {
 										System.out.println(monster.getMon_name()+" Kill.\n Clear Phase "+phase+".");
 										adv.receiveGold(monster.giveGold());
 										adv.receiveXp(monster.giveXp());
+										adv.levelupChk();
 										phase = phase + 1;
 										break;
 									}
@@ -181,6 +227,7 @@ public class Main {
 										System.out.println(monster.getMon_name()+" Kill.\n Clear Phase Boss!");
 										adv.receiveGold(monster.giveGold());
 										adv.receiveXp(monster.giveXp());
+										adv.levelupChk();
 										phase = phase + 1;
 										break;
 									}
@@ -207,19 +254,10 @@ public class Main {
 							}
 						
 						}
-					}
-					
-				} else if(chkText.charAt(0) == '2') {
-					
-				} else if(chkText.charAt(0) == '3') {
-					
-				} else {
-					return;
-				}
-				
+					}	
 			}else if(chkText.charAt(0) == 'e') {
 				// 게임 종료
-				
+				break;
 			}else {
 				System.out.println("\nPlease re-enter.\n\n");
 			}
