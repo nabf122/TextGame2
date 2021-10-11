@@ -1,4 +1,4 @@
-package model;
+package monster;
 
 public class RedDragon extends Monster {
 	

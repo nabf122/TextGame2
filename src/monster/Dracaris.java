@@ -1,4 +1,4 @@
-package model;
+package monster;
 
 public class Dracaris extends Monster {
 

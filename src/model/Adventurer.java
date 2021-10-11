@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Adventurer extends Character {
 
-	// Warrior 캐릭터 생성
+		// Warrior Building
 		public void buildWarrior() {
 			setJob("Warrior");
 			setLevel(1);
@@ -17,7 +17,7 @@ public class Adventurer extends Character {
 			setOwn_gold(0);
 		}
 		
-		// Archer 캐릭터 생성
+		// Archer Building
 		public void buildArcher() {
 			setJob("Archer");
 			setLevel(1);
@@ -30,7 +30,7 @@ public class Adventurer extends Character {
 			setOwn_gold(0);
 		}
 		
-		// Magician 캐릭터 생성
+		// Magician Building
 		public void buildMagician() {
 			setJob("Magician");
 			setLevel(1);
@@ -43,14 +43,14 @@ public class Adventurer extends Character {
 			setOwn_gold(0);
 		}
 		
-		// 캐릭터 상태 확인
+		// Status
 		public void CharStatus() {
 			System.out.println("\nYour Character Status!\n");
 			System.out.println("Name :"+getName()+"\nClass :"+getJob()+"\n\nlevel :"+getLevel()+"\nxp :"+getXp()+"\nMaxHP :"+getMax_hp()+"\nCurHP :"+getCur_hp()
 					+"\nAttack Damage :"+getAttack_damage()+"\nDefense :"+getDefense()+"\nCritical Chance :"+getCritical_chance()+"%\nGold :"+getOwn_gold()+"\n\n");
 		}
 		
-		// heal 스킬 사용 시 체력 체크
+		// healing Adventurer
 		public int heal(int max, int cur, String str) {
 			
 			if(str.charAt(0) == 'w') {
@@ -87,12 +87,12 @@ public class Adventurer extends Character {
 			return cur;
 		}
 		
-		// 캐릭터 아이템 사용
+		// Item
 		public void CharUseItem() {
 			
 		}
 		
-		// 공격하다
+		// Adventurer attack
 		public int attack() {
 			
 			Random random = new Random();
@@ -111,7 +111,7 @@ public class Adventurer extends Character {
 			return result;
 		}
 		
-		// 공격받다
+		// Adventurer take attacked
 		public void attacked(int num) {
 			int result = 0;
 			if(getDefense() >= num) {
@@ -123,7 +123,7 @@ public class Adventurer extends Character {
 			}
 		}
 		
-		// 남은 체력을 체크하다
+		// check Adventurer HP
 		public boolean chkhp() {
 			boolean chk;
 			
@@ -135,19 +135,19 @@ public class Adventurer extends Character {
 			return chk;
 		}
 		
-		// 돈을 넘겨받다
+		// Adventurer receive Gold
 		public void receiveGold(int gold) {
 			setOwn_gold(getOwn_gold()+gold);
 			System.out.println("You got "+gold+" gold.");
 		}
 		
-		// 경험치를 넘겨받다
+		// Adventurer receive XP
 		public void receiveXp(int xp) {
 			setXp(getXp()+ xp);
 			System.out.println("You got "+xp+" xp.");
 		}
 		
-		// 레벨업 체크
+		// Adventurer CKECK LEVEL UP 
 		public void levelupChk(){
 			if(getLevel() == 1 && getXp() >= 10) {
 				setXp(getXp()- 10);

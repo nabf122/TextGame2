@@ -1,6 +1,8 @@
-package model;
+package monster;
 
 import java.util.Random;
+
+import model.Character;
 
 public class Monster extends Character {
 
@@ -70,7 +72,7 @@ public class Monster extends Character {
 	private int mon_own_gold;
 	private int mon_xp;
 	
-	// GreenSlime »ý¼º
+	// GreenSlime ï¿½ï¿½ï¿½ï¿½
 	public void buildGreenSlime() {
 		setMon_name("GreenSlime");
 		setMon_Rank("Normal Monster");
@@ -83,7 +85,7 @@ public class Monster extends Character {
 		setMon_xp(3);
 	}
 	
-	// StoneGolem »ý¼º
+	// StoneGolem ï¿½ï¿½ï¿½ï¿½
 	public void buildStoneGolem() {
 		setMon_name("StoneGolem");
 		setMon_Rank("Normal Monster");
@@ -96,7 +98,7 @@ public class Monster extends Character {
 		setMon_xp(10);
 	}
 	
-	// RedDragon »ý¼º
+	// RedDragon ï¿½ï¿½ï¿½ï¿½
 	public void buildRedDragon() {
 		setMon_name("RedDragon");
 		setMon_Rank("Normal Monster");
@@ -109,7 +111,7 @@ public class Monster extends Character {
 		setMon_xp(20);
 	}
 
-	// BlueDragon »ý¼º
+	// BlueDragon ï¿½ï¿½ï¿½ï¿½
 	public void buildBlueDragon() {
 		setMon_name("BlueDragon");
 		setMon_Rank("Normal Monster");
@@ -122,7 +124,7 @@ public class Monster extends Character {
 		setMon_xp(20);
 	}
 	
-	// Boss KingSlime »ý¼º
+	// Boss KingSlime ï¿½ï¿½ï¿½ï¿½
 	public void buildKingSlime() {
 		setMon_name("KingSlime");
 		setMon_Rank("Boss Monster");
@@ -135,7 +137,7 @@ public class Monster extends Character {
 		setMon_xp(10);
 	}
 	
-	// Boss QuagGolem »ý¼º
+	// Boss QuagGolem ï¿½ï¿½ï¿½ï¿½
 	public void buildQuagGolem() {
 		setMon_name("QuagGolem");
 		setMon_Rank("Boss Monster");
@@ -148,7 +150,7 @@ public class Monster extends Character {
 		setMon_xp(30);
 	}
 	
-	// Boss Dracaris »ý¼º
+	// Boss Dracaris ï¿½ï¿½ï¿½ï¿½
 	public void buildDracaris() {
 		setMon_name("Dracaris");
 		setMon_Rank("Boss Monster");
@@ -161,14 +163,14 @@ public class Monster extends Character {
 		setMon_xp(200);
 	}
 		
-	// ¸ó½ºÅÍÀÇ »óÅÂ È®ÀÎ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 	public void monsterStatus() {
 		System.out.println("\nMonster Status!\n");
 		System.out.println("Name :"+mon_name+"\nRank :"+mon_Rank+"\n\nlevel :"+mon_level+"\nMaxHP :"+mon_max_hp+"\nCurHP :"+mon_cur_hp
 				+"\nAttack Damage :"+mon_attack_damage+"\nDefense :"+mon_defense+"\nGold :"+mon_own_gold+"\n\n");
 	}
 	
-	// °ø°ÝÇÏ´Ù
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½
 	public int attack() {
 		
 		Random random = new Random();
@@ -187,7 +189,7 @@ public class Monster extends Character {
 		return result;
 	}
 	
-	// °ø°Ý¹Þ´Ù
+	// ï¿½ï¿½ï¿½Ý¹Þ´ï¿½
 	public void attacked(int num) {
 		int result = 0;
 		if(mon_defense >= num) {
@@ -200,7 +202,7 @@ public class Monster extends Character {
 		}
 	}
 	
-	//³²Àº Ã¼·ÂÀ» Ã¼Å©ÇÏ´Ù
+	//ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ Ã¼Å©ï¿½Ï´ï¿½
 	public boolean chkhp() {
 		boolean chk;
 		
@@ -212,12 +214,12 @@ public class Monster extends Character {
 		return chk;
 	}
 	
-	//µ·À» ³Ñ°ÜÁÖ´Ù
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ°ï¿½ï¿½Ö´ï¿½
 	public int giveGold() {
 		return mon_own_gold;
 	}
 	
-	//°æÇèÄ¡¸¦ ³Ñ°ÜÁÖ´Ù
+	//ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ñ°ï¿½ï¿½Ö´ï¿½
 	public int giveXp() {
 		return mon_xp;
 	}
