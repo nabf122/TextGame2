@@ -2,20 +2,12 @@ package item;
 
 public class ArmorItem extends EquipmentItem {
 
-	// ��� ������ Ŭ����
-	private int item_defense;
-	private int item_hp;
-	
-	public int getItem_defense() {
-		return item_defense;
-	}
-	public void setItem_defense(int item_defense) {
-		this.item_defense = item_defense;
-	}
-	public int getItem_hp() {
-		return item_hp;
-	}
-	public void setItem_hp(int item_hp) {
-		this.item_hp = item_hp;
+	public void Armor1() {
+		setName("강철 갑옷");
+		setPrice(80);
+		setEqmt_ad(0);
+		setEqmt_df(2);
+		setEqmt_cc(0);
+		setParts("armor");
 	}
 }

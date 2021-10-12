@@ -2,21 +2,14 @@ package item;
 
 public class ConsumableItem extends Item {
 
-	// �Һ� ������ Ŭ����
+	public int getConsum_hp() {
+		return consum_hp;
+	}
+
+	public void setConsum_hp(int consum_hp) {
+		this.consum_hp = consum_hp;
+	}
 	
-	private int effect_shame; // ȿ�� ��ġ
-	private int effect_name; // ȿ�� �̸�
-	
-	public int getEffect_shame() {
-		return effect_shame;
-	}
-	public void setEffect_shame(int effect_shame) {
-		this.effect_shame = effect_shame;
-	}
-	public int getEffect_name() {
-		return effect_name;
-	}
-	public void setEffect_name(int effect_name) {
-		this.effect_name = effect_name;
-	}
+	private int consum_hp;
+
 }

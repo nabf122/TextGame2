@@ -2,33 +2,34 @@ package item;
 
 public class Item {
 	
-	private String item_name; // ������ �̸�
-	private int price; // ������ ����
-	private int sel_price; // ������ �� �� ����
-	private String item_explanation; // ������ ����
+	/*
+	 * 아이템 기본 정보
+	 */
+	private int itemID;
+	private int price;
+	private String name;
 	
-	public String getItem_name() {
-		return item_name;
+	public int getItemID() {
+		return itemID;
 	}
-	public void setItem_name(String item_name) {
-		this.item_name = item_name;
+
+	public void setItemID(int itemID) {
+		this.itemID = itemID;
 	}
+	
 	public int getPrice() {
 		return price;
 	}
+
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public int getSel_price() {
-		return sel_price;
+	
+	public String getName() {
+		return name;
 	}
-	public void setSel_price(int sel_price) {
-		this.sel_price = sel_price;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getItem_explanation() {
-		return item_explanation;
-	}
-	public void setItem_explanation(String item_explanation) {
-		this.item_explanation = item_explanation;
-	}	
 }

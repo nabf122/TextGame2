@@ -50,8 +50,8 @@ public class Display {
 	
 	public void store_msg() {
 		System.out.println("visited Store.\nWhat are you going to do?\n");
-		System.out.println("(1) buying. press '1'\n"
-				+ "(2) Selling. press '2'\n"
+		System.out.println("(1) Buying Item. press '1'\n"
+				+ "(2) Delete Item. press '2'\n"
 				+ "(3) exit. press '3'\n");
 	}
 	

@@ -2,15 +2,12 @@ package item;
 
 public class WeaponItem extends EquipmentItem {
 
-	// ���� ������ Ŭ����
-	private int item_Attack_Damege;
-
-	public int getItem_Attack_Damege() {
-		return item_Attack_Damege;
+	public void Weapon1() {
+		setName("불의검");
+		setPrice(100);
+		setEqmt_ad(10);
+		setEqmt_df(0);
+		setEqmt_cc(5);
+		setParts("weapon");
 	}
-
-	public void setItem_Attack_Damege(int item_Attack_Damege) {
-		this.item_Attack_Damege = item_Attack_Damege;
-	}
-
 }

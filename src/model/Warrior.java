@@ -4,7 +4,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Warrior extends Adventurer {
-	// Warroir attack
+	
+	/*
+	 * 워리어 공격할 때, 데미지 계산 및 스킬 로직
+	 */
 	public int attack() {
 				
 		Random random = new Random();
