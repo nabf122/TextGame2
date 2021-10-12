@@ -1,11 +1,11 @@
-package model;
+package item;
 
 public class ConsumableItem extends Item {
 
-	// ¼Òºñ ¾ÆÀÌÅÛ Å¬·¡½º
+	// ï¿½Òºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½
 	
-	private int effect_shame; // È¿°ú ¼öÄ¡
-	private int effect_name; // È¿°ú ÀÌ¸§
+	private int effect_shame; // È¿ï¿½ï¿½ ï¿½ï¿½Ä¡
+	private int effect_name; // È¿ï¿½ï¿½ ï¿½Ì¸ï¿½
 	
 	public int getEffect_shame() {
 		return effect_shame;

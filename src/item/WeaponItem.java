@@ -1,8 +1,8 @@
-package model;
+package item;
 
 public class WeaponItem extends EquipmentItem {
 
-	// ¹«±â ¾ÆÀÌÅÛ Å¬·¡½º
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½
 	private int item_Attack_Damege;
 
 	public int getItem_Attack_Damege() {

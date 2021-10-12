@@ -1,8 +1,8 @@
-package model;
+package item;
 
 public class ArmorItem extends EquipmentItem {
 
-	// ¹æ¾î ¾ÆÀÌÅÛ Å¬·¡½º
+	// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½
 	private int item_defense;
 	private int item_hp;
 	

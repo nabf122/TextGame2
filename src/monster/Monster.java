@@ -61,6 +61,14 @@ public class Monster extends Character {
 	public void setMon_Rank(String mon_Rank) {
 		this.mon_Rank = mon_Rank;
 	}
+	
+	public int getMon_speed() {
+		return mon_speed;
+	}
+	public void setMon_speed(int mon_speed) {
+		this.mon_speed = mon_speed;
+	}
+
 
 	private String mon_name;
 	private String mon_Rank;
@@ -71,8 +79,10 @@ public class Monster extends Character {
 	private int mon_defense;
 	private int mon_own_gold;
 	private int mon_xp;
+	private int mon_speed;
 	
-	// GreenSlime ����
+	
+	// GreenSlime
 	public void buildGreenSlime() {
 		setMon_name("GreenSlime");
 		setMon_Rank("Normal Monster");
@@ -83,9 +93,11 @@ public class Monster extends Character {
 		setMon_defense(2);
 		setMon_own_gold(20);
 		setMon_xp(3);
+		setMon_speed(1);
+	
 	}
 	
-	// StoneGolem ����
+	// StoneGolem
 	public void buildStoneGolem() {
 		setMon_name("StoneGolem");
 		setMon_Rank("Normal Monster");
@@ -96,9 +108,10 @@ public class Monster extends Character {
 		setMon_defense(5);
 		setMon_own_gold(120);
 		setMon_xp(10);
+		setMon_speed(1);
 	}
 	
-	// RedDragon ����
+	// RedDragon
 	public void buildRedDragon() {
 		setMon_name("RedDragon");
 		setMon_Rank("Normal Monster");
@@ -109,9 +122,10 @@ public class Monster extends Character {
 		setMon_defense(5);
 		setMon_own_gold(200);
 		setMon_xp(20);
+		setMon_speed(2);
 	}
 
-	// BlueDragon ����
+	// BlueDragon
 	public void buildBlueDragon() {
 		setMon_name("BlueDragon");
 		setMon_Rank("Normal Monster");
@@ -122,9 +136,10 @@ public class Monster extends Character {
 		setMon_defense(10);
 		setMon_own_gold(200);
 		setMon_xp(20);
+		setMon_speed(1);
 	}
 	
-	// Boss KingSlime ����
+	// Boss KingSlime
 	public void buildKingSlime() {
 		setMon_name("KingSlime");
 		setMon_Rank("Boss Monster");
@@ -135,9 +150,10 @@ public class Monster extends Character {
 		setMon_defense(3);
 		setMon_own_gold(200);
 		setMon_xp(10);
+		setMon_speed(2);
 	}
 	
-	// Boss QuagGolem ����
+	// Boss QuagGolem
 	public void buildQuagGolem() {
 		setMon_name("QuagGolem");
 		setMon_Rank("Boss Monster");
@@ -148,9 +164,10 @@ public class Monster extends Character {
 		setMon_defense(7);
 		setMon_own_gold(500);
 		setMon_xp(30);
+		setMon_speed(3);
 	}
 	
-	// Boss Dracaris ����
+	// Boss Dracaris 
 	public void buildDracaris() {
 		setMon_name("Dracaris");
 		setMon_Rank("Boss Monster");
@@ -161,16 +178,18 @@ public class Monster extends Character {
 		setMon_defense(10);
 		setMon_own_gold(1000);
 		setMon_xp(200);
+		setMon_speed(4);
 	}
 		
-	// ������ ���� Ȯ��
+	//
 	public void monsterStatus() {
 		System.out.println("\nMonster Status!\n");
 		System.out.println("Name :"+mon_name+"\nRank :"+mon_Rank+"\n\nlevel :"+mon_level+"\nMaxHP :"+mon_max_hp+"\nCurHP :"+mon_cur_hp
-				+"\nAttack Damage :"+mon_attack_damage+"\nDefense :"+mon_defense+"\nGold :"+mon_own_gold+"\n\n");
+				+"\nAttack Damage :"+mon_attack_damage+"\nDefense :"+mon_defense+"\nGold :"+mon_own_gold+"\nSpeed :"
+				+ mon_speed +"\n\n");
 	}
 	
-	// �����ϴ�
+	//
 	public int attack() {
 		
 		Random random = new Random();
@@ -180,29 +199,32 @@ public class Monster extends Character {
 		
 		critical = (int) (Math.random() * 100 + 1);
 		if(1 <= critical && critical <= 5) {
-			result = (random.nextInt(mon_attack_damage) - 1) * 2;
+			result = (random.nextInt(mon_attack_damage) + 1) * 2;
+			
 			System.out.println("Monster's Critical Attack!");
+			System.out.println(getMon_name()+"은(는) "+ result +"의 데미지로 공격을 하였다.");
 		}else {
-			result = random.nextInt(mon_attack_damage) - 1;
+			result = random.nextInt(mon_attack_damage) + 1;
+			System.out.println(getMon_name()+"은(는) "+ result +"의 데미지로 공격을 하였다.");
 		}
 		
 		return result;
 	}
 	
-	// ���ݹ޴�
+	//
 	public void attacked(int num) {
 		int result = 0;
 		if(mon_defense >= num) {
 			mon_cur_hp = mon_cur_hp - result;
-			System.out.println("did no damage!");
+			System.out.println(getMon_name()+": did no damage!");
 		} else {
 			result = num - mon_defense;
 			mon_cur_hp = mon_cur_hp - result;
-			System.out.println("Deal "+result+" damage.");
+			System.out.println(getMon_name()+": Deal "+result+" damage.");
 		}
 	}
 	
-	//���� ü���� üũ�ϴ�
+	//
 	public boolean chkhp() {
 		boolean chk;
 		
@@ -214,12 +236,12 @@ public class Monster extends Character {
 		return chk;
 	}
 	
-	//���� �Ѱ��ִ�
+	//
 	public int giveGold() {
 		return mon_own_gold;
 	}
 	
-	//����ġ�� �Ѱ��ִ�
+	//
 	public int giveXp() {
 		return mon_xp;
 	}

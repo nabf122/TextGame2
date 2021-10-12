@@ -1,11 +1,11 @@
-package model;
+package item;
 
 public class Item {
 	
-	private String item_name; // ╬фюлеш юл╦╖
-	private int price; // ╬фюлеш ╟║╟щ
-	private int sel_price; // ╬фюлеш фх ╤╖ ╟║╟щ
-	private String item_explanation; // ╬фюлеш ╪Ё╦М
+	private String item_name; // О©╫О©╫О©╫О©╫О©╫О©╫ О©╫л╦О©╫
+	private int price; // О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫
+	private int sel_price; // О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫ О©╫О©╫ О©╫О©╫О©╫О©╫
+	private String item_explanation; // О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫
 	
 	public String getItem_name() {
 		return item_name;

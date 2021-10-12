@@ -1,23 +1,23 @@
-package model;
+package main;
 
 public class Display {
 
 	// print messages!
 	
-	public void make_name(String str) {
-		if(str.charAt(0)!='y') {
+	public void make_name_msg(String str) {
+		if(str.charAt(0)=='n') {
 			System.out.println("Please re-enter your name.");
 		}
 		else
 			System.out.println("What's youer name?");
 	}
 	
-	public void re_name(String name) {
+	public void re_name_msg(String name) {
 		System.out.println(name+", Is your name correct? (y/n)");
 	}
 	
-	public void make_class(String str) {
-		if(str.charAt(0)!='y') {
+	public void make_class_msg(String str) {
+		if(str.charAt(0)=='n') {
 			System.out.println("Please re-enter your Class.");
 		}else
 			System.out.println("Now choose the Class. What Class do you want?\n");
@@ -26,11 +26,11 @@ public class Display {
 			System.out.println("Great Magicion. press 'm' if you want.\n");
 	}
 	
-	public void re_class(String job) {
+	public void re_class_msg(String job) {
 		System.out.println(job+"! Is your Class correct? (y/n)");
 	}
 	
-	public String chk_job(String job) {
+	public String chk_job_msg(String job) {
 		if(job.charAt(0)=='w') {
 			return "Strong Warrior";
 		} else if(job.charAt(0)=='a') {
@@ -69,7 +69,15 @@ public class Display {
 				+"(3)Valley of Dragons. press '3'\n");
 	}
 	
-	public void appear_monster(String str) {
+	public void appear_monster_msg(String str) {
 		System.out.println(str+" 몬스터가 등장하였습니다!");
+	}
+	
+	public void battle_msg() {
+		System.out.println("Choose your action.");
+		System.out.println("(1)Attack. press '1'\n"
+				+"(2)Heal. press '2'\n"
+				+"(3)Check Status. press '3'\n"
+				+"(4)Run away. press '4'\n");
 	}
 }

@@ -81,6 +81,14 @@ public class Character {
 	public void setJob(String job) {
 		this.job = job;
 	}
+	
+	public int getSpeed() {
+		return speed;
+	}
+
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
 
 	private String job;
 	private String name;
@@ -91,6 +99,7 @@ public class Character {
 	private int attack_damage;
 	private int defense;
 	private int critical_chance;
+	private int speed;
 	private int own_gold;
 
 }

@@ -15,6 +15,7 @@ public class Adventurer extends Character {
 			setDefense(3);
 			setCritical_chance(5);
 			setOwn_gold(0);
+			setSpeed(2);
 		}
 		
 		// Archer Building
@@ -24,10 +25,11 @@ public class Adventurer extends Character {
 			setXp(0);
 			setMax_hp(30);
 			setCur_hp(30);
-			setAttack_damage(10);
+			setAttack_damage(9);
 			setDefense(1);
 			setCritical_chance(10);
 			setOwn_gold(0);
+			setSpeed(3);
 		}
 		
 		// Magician Building
@@ -35,19 +37,21 @@ public class Adventurer extends Character {
 			setJob("Magician");
 			setLevel(1);
 			setXp(0);
-			setMax_hp(40);
-			setCur_hp(40);
-			setAttack_damage(8);
-			setDefense(1);
+			setMax_hp(35);
+			setCur_hp(35);
+			setAttack_damage(12);
+			setDefense(2);
 			setCritical_chance(5);
 			setOwn_gold(0);
+			setSpeed(1);
 		}
 		
 		// Status
 		public void CharStatus() {
 			System.out.println("\nYour Character Status!\n");
 			System.out.println("Name :"+getName()+"\nClass :"+getJob()+"\n\nlevel :"+getLevel()+"\nxp :"+getXp()+"\nMaxHP :"+getMax_hp()+"\nCurHP :"+getCur_hp()
-					+"\nAttack Damage :"+getAttack_damage()+"\nDefense :"+getDefense()+"\nCritical Chance :"+getCritical_chance()+"%\nGold :"+getOwn_gold()+"\n\n");
+					+"\nAttack Damage :"+getAttack_damage()+"\nDefense :"+getDefense()+"\nCritical Chance :"+getCritical_chance()+"%\nGold :"+getOwn_gold()+
+					"\nSpeed :"+ getSpeed() +"\n\n");
 		}
 		
 		// healing Adventurer
@@ -94,32 +98,28 @@ public class Adventurer extends Character {
 		
 		// Adventurer attack
 		public int attack() {
-			
-			Random random = new Random();
-			
-			int result = 0;
-			int critical = 0;
-			
-			critical = (int) (Math.random() * 100 + 1);
-			if(1 <= critical && critical <= getCritical_chance()) {
-				result = (random.nextInt(getAttack_damage()) - 1) * 2;
-				System.out.println("Critical Attack!");
-			}else {
-				result = random.nextInt(getAttack_damage()) - 1;
-			}
-			
-			return result;
+						
+			return getAttack_damage();
+		}
+		
+		// 선공권 확인하는 로직
+		public boolean chk_speed(int speed) {
+			int mon_speed = speed;
+			if(getSpeed() >= mon_speed) {
+				return true;
+			}else
+				return false;
 		}
 		
 		// Adventurer take attacked
 		public void attacked(int num) {
 			int result = 0;
 			if(getDefense() >= num) {
-				System.out.println("No damage was done!");
+				System.out.println(getName()+": no damage was done!");
 			} else {
 				result = num - getDefense();
 				setCur_hp(getCur_hp() - result);
-				System.out.println("Took "+result+" damage.");
+				System.out.println(getName()+": took "+result+" damage.");
 			}
 		}
 		
@@ -152,38 +152,53 @@ public class Adventurer extends Character {
 			if(getLevel() == 1 && getXp() >= 10) {
 				setXp(getXp()- 10);
 				setLevel(2);
+				levelup_msg();
 			} else if(getLevel() == 2 && getXp() >= 20)	{
 				setXp(getXp()- 20);
 				setLevel(3);
+				levelup_msg();
+				System.out.println("New skill can be used.");
 			} else if(getLevel() == 3 && getXp() >= 30)	{
 				setXp(getXp()- 30);
 				setLevel(4);
+				levelup_msg();
 			} else if(getLevel() == 4 && getXp() >= 40)	{
 				setXp(getXp()- 40);
 				setLevel(5);
+				levelup_msg();
 			} else if(getLevel() == 5 && getXp() >= 50)	{
 				setXp(getXp()- 50);
 				setLevel(6);
+				levelup_msg();
 			} else if(getLevel() == 6 && getXp() >= 70)	{
 				setXp(getXp()- 70);
 				setLevel(7);
+				levelup_msg();
+				System.out.println("New skill can be used.");
 			} else if(getLevel() == 7 && getXp() >= 90)	{
 				setXp(getXp()- 90);
 				setLevel(8);
+				levelup_msg();
 			} else if(getLevel() == 8 && getXp() >= 110)	{
 				setXp(getXp()- 110);
 				setLevel(9);
+				levelup_msg();
 			} else if(getLevel() == 9 && getXp() >= 130)	{
 				setXp(getXp()- 130);
 				setLevel(10);
+				levelup_msg();
+				System.out.println("New skill can be used.");
 			} else if(getLevel() == 10 && getXp() >= 150)	{
 				setXp(getXp()- 150);
 				setLevel(11);
+				levelup_msg();
 			} else {
 				System.out.println("lack of xp.\n");
 				return;
 			}
-			
+		}
+		
+		void levelup_msg() {
 			System.out.println("Level UP!!\n");
 			System.out.println("Your level is "+getLevel());
 			System.out.println("Stat has risen!");
